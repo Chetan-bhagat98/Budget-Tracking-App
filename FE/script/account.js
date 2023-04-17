@@ -1,4 +1,3 @@
-
 let add_account_btn=document.getElementById("add_form");
 
 add_account_btn.addEventListener("submit",(event)=>{
@@ -11,10 +10,10 @@ add_account_btn.addEventListener("submit",(event)=>{
     addAccountFunction(obj);
 })
 
-
+const baseURL="https://busy-sock-fawn.cyclic.app"
 let addAccountFunction=async(obj)=>{
     try {
-        let add_req=await fetch(`http://localhost:9168/accounts/create`,{
+        let add_req=await fetch(`${baseURL}/accounts/create`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",
@@ -23,14 +22,14 @@ let addAccountFunction=async(obj)=>{
             body:JSON.stringify(obj)
         })
         if(add_req.ok){
-            alert("New account is added");
+            swal("New account is added","","success");
             getAccountFunction();
         }else{
-            alert("unable to add new account!");
+            swal("unable to add new account!");
         }
     } catch (error) {
-        console.log(error.message);
-        alert("unable to add new account!");
+       
+        swal("unable to add new account!");
     }
 };
 
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded",(event)=>{
 
 let getAccountFunction=async()=>{
     try {
-        let allData_req=await fetch(`http://localhost:9168/accounts`,{
+        let allData_req=await fetch(`${baseURL}/accounts`,{
             method:"GET",
             headers:{
                 "Content-Type":"application/json",
@@ -55,17 +54,17 @@ let getAccountFunction=async()=>{
             let total=backendData.total;
             renderAccountFunction(accountData,total);
         }else{
-            alert("unable to load!!");
+            swal("unable to load!!");
         }
     } catch (error) {
-        console.log(error.message);
-        alert("unable to load!!");
+      
+        swal("unable to load!!");
     }
 }
 
 
 let renderAccountFunction=async(accountData,total)=>{
-    document.getElementById("net_total").innerHTML=`<label>Net Total : </label>${total}`;
+    document.getElementById("net_total").innerHTML=`<label>Total Balance : </label><spam style="color:red; font-size:16px " >${total} Rs</spam>`;
     let displayContainer=document.getElementById("render_container");
     displayContainer.innerHTML=null;
     let accountArr=accountData.map((item)=>{
@@ -110,7 +109,7 @@ let renderAccountFunction=async(accountData,total)=>{
                 let edit_name=document.getElementById("edit_name").innerText;
                 let edit_acc_no=document.getElementById("edit_acc_no").innerText;
                 let edit_balance=document.getElementById("edit_balance").innerText;
-                let edit_url=`http://localhost:9168/accounts/update/${edit_id}`;
+                let edit_url=`${baseURL}/accounts/update/${edit_id}`;
                 editReqNameFunction(edit_url,edit_name,edit_acc_no,edit_balance);
             })
 
@@ -121,7 +120,7 @@ let renderAccountFunction=async(accountData,total)=>{
 
 let deleteAccountFunction=async(id)=>{
     try {
-        let delete_req=await fetch(`http://localhost:9168/accounts/delete/${id}`,{
+        let delete_req=await fetch(`${baseURL}/accounts/delete/${id}`,{
             method:"DELETE",
             headers:{
                 "Content-Type":"application/json",
@@ -129,14 +128,14 @@ let deleteAccountFunction=async(id)=>{
             }
         })
         if(delete_req.ok){
-            alert("account deleted");
+            swal("account deleted","","success");
             getAccountFunction();
         }else{
-            alert("Unable to delete the account!");
+            swal("Unable to delete the account!");
         }
     } catch (error) {
-        console.log(error.message);
-        alert("Unable to delete the account!");
+        
+        swal("Unable to delete the account!");
     }
 }
 
@@ -152,12 +151,12 @@ let editReqNameFunction=async(url,name,acc_no,balance)=>{
             body : JSON.stringify({"name":name,"acc_no":acc_no,"balance":balance})
         })
         if(req.ok){
-            alert("account details successfuly updated");
+            swal("account details successfuly updated");
             getAccountFunction();
         }
     } catch (error) {
-        console.log(error.message);
-        alert("unable to update account details");
+       
+        swal("unable to update account details");
     }
 }
 

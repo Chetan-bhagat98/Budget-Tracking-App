@@ -5,10 +5,11 @@ require("dotenv").config();
 const{client}=require("../config/redis");
 
 const authenticator=async(req,res,next)=>{
-    console.log(req.headers.authorization);
+    
+    // taking token from headers
      const token=await client.get(req.headers.authorization);
      if(token){
-         const decoded=jwt.verify(token,process.env.key);
+         const decoded=jwt.verify(token,process.env.key); //verifying
          if(decoded){
              req.body.userID=decoded.userID;
              next();

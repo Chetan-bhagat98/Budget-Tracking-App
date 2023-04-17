@@ -9,104 +9,7 @@ a {
 }
 
 
-/* **********NAVBAR CSS************ */
-#navbar {
-    display: flex;
-    background-color:  rgb(35, 164, 85);;
-    /* border: 1px solid red; */
-    align-content: center;
-    justify-content: space-around;
-}
 
-#brand_name {
-    font-size: 30px;
-    font-weight: 800;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-#gif{
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-ul {
-    display: flex;
-    justify-content: space-evenly;
-    /* border: 1px solid red; */
-    align-items: center;
-}
-
-ul a:hover {
-    transition: all ease-in-out 0.3s;
-    color: white;
-}
-li{
-    list-style-type: none;
-    font-size: 17px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 600;
-}
-
-#navsub2 {
-    width: 35%;
-}
-
-#navsub1 {
-    margin-right: 40px;
-    width: 20%;
-}
-
-#navsub1 button {
-    padding: 5px;
-    font-size: 16px;
-    border: 0ch;
-    border-radius: 2px;
-}
-#toggle1 {
-    display: none;
-    position: fixed;
-    padding: 4px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-#toggle1>a {
-    display:block;
-    font-size: 15px;
-    padding: 4px;
-}
-
-#toggle1>a:hover {
-    
-    color: rgb(249, 240, 240);
-    background-color:  rgb(35, 164, 85);;
-}
-#toggle2 {
-    display: none;
-    position: fixed;
-    background-color: white;
-    padding: 4px;
-}
-
-#toggle2>div {
-    font-size: 14px;
-    padding: 3px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#toggle2>div:hover {
-    background-color:  rgb(35, 164, 85);;
-    color: white;
-
-}
-
-.myname{
-    font-size: 50px;
-    font-weight: 500;
-}
-
-
-/* **********NAVBAR CSS END************ */
 
 /* ***********HOME CSS**************** */
 
@@ -156,7 +59,10 @@ a{
 }
 #allrenders{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    padding: 5px;
+    padding: 8px;
+    /* overflow: scroll; */
+    overflow-y: auto;
+    height: 300px;
     border-radius: 8px;
     border: 0.5px solid green;
     background-color: snow;
@@ -198,7 +104,7 @@ a{
     align-items: center;
     justify-content: space-between;
     padding: 2px;
-    /* background-color: rgb(244, 247, 248); */
+    
 
 }
 .banks>a{
@@ -264,7 +170,7 @@ input[type=text]:focus  {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: rgba(218, 11, 11, 0.16) 0px 1px 4px;
-  width:40%;
+  width:45%;
   
 }
 .container p {
@@ -390,10 +296,79 @@ footer>p {
   .container {
     width: auto;
   }
+  #Envelopes{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between
+  }
+
+#Envelopes>div:nth-child(1){
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+#Envelopes>div:nth-child(2){
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+   justify-content: space-evenly;
+
+}
+#envelopes_img{
+    width: 80%;
+    height:auto;
+}
+#allrenders{
+    border-radius: 3px;
+    height: 300px;
+    width: 330px;
+    overflow: scroll;
+    scrollbar-width: auto;
+    
 }
 
-@media all and (max-width: 400px) {
+}
+
+@media all and (max-width: 449px) {
   .container {
     padding: 0px 20px;
   }
+  #Envelopes{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between
+  }
+
+#Envelopes>div:nth-child(1){
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 98%;
+}
+#Envelopes>div:nth-child(2){
+    margin: auto;
+    margin-top: 30px;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+   justify-content: space-evenly;
+
+}
+#envelopes_img{
+    width: 80%;
+    height:auto;
+}
+#allrenders{
+    margin: auto;
+    border-radius: 3px;
+    height: 300px;
+    width: 330px;
+    overflow: scroll;
+    scrollbar-width: auto;
+    
+}
+
 }

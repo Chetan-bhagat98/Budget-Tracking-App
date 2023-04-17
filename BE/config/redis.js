@@ -1,7 +1,7 @@
-const redis=require("redis");
+const redis = require("redis"); //requiring redis port
 const { error } = require("winston");
 
-
+// connecting to the client
 const client = redis.createClient({
     password: 'wMKAL2QmoyDVGI9jsan9Ho7pvTcH0v3F',
     socket: {
@@ -12,13 +12,13 @@ const client = redis.createClient({
 
 client.connect();
 
-client.on("error",(error)=>{
-    console.log(error.message);
+client.on("error", (error) => {
+
 })
-client.on("connect",()=>{
-    console.log("connected to the redis cloud");
+client.on("connect", () => {
+
 })
 
-module.exports={
+module.exports = {
     client
 }
