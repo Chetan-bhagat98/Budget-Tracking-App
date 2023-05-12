@@ -118,8 +118,6 @@ npm i express, dotenv, nodemon, mongoose, redis-cli, bcrypt, jsonwebtoken
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKZRJJRPM1V6XKXBLn2fnsy5VwmLW1uO9ixCfCYiZRwWeLKe2ukB17uzxRRyhZElgzn_E&usqp=CAU" alt="twilio" width="70" height="50"/>
 </p>
 
-
-=======
 <h3>Contact ✉️</h3>
 <p> Connect with me over socail media </p>
 <div display:"flex">
@@ -130,5 +128,5 @@ npm i express, dotenv, nodemon, mongoose, redis-cli, bcrypt, jsonwebtoken
  <p> @2023 Chetan Bhagat </p>
  <h3> Show your support 🙌</h3>
  <p> Give ⭐ , If you 🫶 like the project</P>
->>>>>>> 62b5f0338add51e496073d2ce2b04ff72f4e898b
+
 
